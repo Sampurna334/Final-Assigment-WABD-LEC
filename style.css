@@ -1,0 +1,184 @@
+/* --- General Styles --- */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box; /* Best practice: includes padding and border in the element's total width and height. */
+}
+
+body {
+    font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+    background: #f6fff6;
+    /* overflow-x: hidden; */ /* Dihapus: Kita perbaiki akar masalahnya, bukan menyembunyikan gejalanya. */
+}
+
+header {
+    background: #2fe977;
+    padding: 1rem 0;
+    text-align: center;
+    width: 100%; /* DIUBAH: Gunakan 100% bukan 100vw untuk menghindari horizontal scroll. */
+}
+
+h1 {
+    text-align: center;
+    margin: 10px;
+}
+
+h2 {
+    text-align: center;
+    margin: 20px 10px 10px 10px;
+}
+
+/* --- Car Card Styles --- */
+.car-card-container {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 1.5rem; /* Sedikit ditambah untuk spasi yang lebih baik */
+    padding: 1.5rem;
+    margin: 10px;
+}
+
+.car-card {
+    border: 1px solid #ddd;
+    padding: 1rem;
+    border-radius: 10px;
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    background: #fff;
+    box-shadow: 0 2px 5px rgba(0,0,0,0.1); /* Tambahan: untuk estetika */
+}
+
+.car-card img {
+    width: 100%;
+    max-width: 250px; /* Batasi lebar max di desktop */
+    height: auto;
+    object-fit: cover;
+    margin-bottom: 1rem;
+    border-radius: 8px; /* Tambahan: agar sudut gambar tidak tajam */
+}
+
+.car-card h3 {
+    text-align: center;
+    margin-bottom: 0.5rem;
+}
+
+.car-card p {
+    text-align: center;
+    background-color: green;
+    color: white;
+    border-radius: 10px;
+    width: fit-content;
+    margin: 0.5rem auto;
+    padding: 0.5rem 1rem;
+}
+
+.car-card label {
+    margin-top: 0.5rem;
+}
+
+.car-card input[type="number"],
+.car-card input[type="date"] {
+    width: 90%;
+    max-width: 200px;
+    padding: 0.4rem;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    text-align: center;
+}
+
+/* --- Form and Sections --- */
+form,
+#ringkasan,
+#daftar-pesanan {
+    display: flex; /* Dibuat flex untuk form agar lebih rapi */
+    flex-direction: column;
+    align-items: center;
+    gap: 0.7rem;
+    border: 1px solid #b2eab2;
+    margin: 2rem auto;
+    padding: 1.5rem;
+    width: 90%;
+    max-width: 450px; /* Batasi lebar maksimal */
+    border-radius: 10px;
+    background: #eaffea;
+}
+
+#ringkasan, #daftar-pesanan {
+     background: #fff;
+     max-width: 600px;
+     align-items: stretch; /* Agar item di dalamnya bisa full-width */
+}
+
+.date {
+    background-color: rgb(180, 248, 180);
+    border-radius: 10px;
+    padding: 0.3rem 0.8rem;
+    width: fit-content;
+    margin: 10px auto;
+}
+
+.duration {
+    display: flex;
+    justify-content: center;
+    /* Margin besar ini hanya cocok untuk desktop */
+    margin: auto 20rem; 
+}
+
+a {
+    text-decoration: none;
+}
+
+button {
+    margin: 0.5rem auto;
+    display: block;
+    padding: 0.7rem 1.5rem;
+    border-radius: 8px;
+    border: none;
+    background: #2fe977;
+    color: #222;
+    font-weight: bold;
+    cursor: pointer;
+    width: 90%;
+    max-width: 320px;
+}
+
+button:hover {
+    background: #25c968; /* Tambahan: efek hover */
+}
+
+
+/* --- Media Query for Mobile Devices --- */
+@media (max-width: 768px) {
+    .car-card-container {
+        grid-template-columns: 1fr; /* Ubah menjadi satu kolom */
+        padding: 1rem;
+        gap: 1rem;
+        margin: 0;
+    }
+
+    .car-card img {
+        max-width: 100%; /* Biarkan gambar mengisi lebar .car-card */
+    }
+
+    /* PENTING: Reset margin untuk .duration di mobile */
+    .duration {
+        margin: 1rem;
+    }
+
+    form,
+    #ringkasan,
+    #daftar-pesanan {
+        width: 95%; /* Gunakan persentase agar fleksibel */
+        padding: 1rem;
+        margin: 1rem auto; /* Atur margin atas/bawah dan tengahkan */
+    }
+
+    button {
+         width: 90%;
+    }
+
+    .car-card input[type="number"],
+    .car-card input[type="date"] {
+        width: 80%; /* Sesuaikan lebar input di mobile */
+    }
+}

@@ -1,0 +1,69 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Rental Mobil ABC</title>
+    <link rel="stylesheet" href="style.css">
+</head>
+<body>
+    <header>
+        <h1>Perusahaan ABC</h1>
+        <h2>Daftar Mobil</h2>
+    </header>
+    <main>
+        <section class="carlist">
+            <div class="car-card-container">
+                <div class="car-card">
+                    <input type="checkbox" class="checkbox">
+                    <h3>Toyota Avanza</h3>
+                    <p>Rp 500.000/hari</p>
+                    <img src="assets/toyota-innova.jpeg" alt="">
+                    <input type="date" class="date">
+                    <label>Durasi (hari):</label>
+                    <input type="number" class="duration" min="1" value="1">
+                </div>
+                <div class="car-card">
+                    <input type="checkbox" class="checkbox">
+                    <h3>Toyota Kijang Innova</h3>
+                    <p>Rp 700.000/hari</p>
+                    <img src="assets/toyota-avanza.png" alt="">
+                    <input type="date" class="date">
+                    <label>Durasi (hari):</label>
+                    <input type="number" class="duration" min="1" value="1">
+                </div>
+                <div class="car-card">
+                    <input type="checkbox" class="checkbox">
+                    <h3>Honda HRV</h3>
+                    <p>Rp 600.000/hari</p>
+                    <img src="assets/honda-hrb.webp" alt="">
+                    <input type="date" class="date">
+                    <label>Durasi (hari):</label>
+                    <input type="number" class="duration" min="1" value="1">
+                </div>
+                <div class="car-card">
+                    <input type="checkbox" class="checkbox">
+                    <h3>Daihatsu Sigra</h3>
+                    <p>Rp 450.000/hari</p>
+                    <img src="assets/daihatsu-sigra.avif" alt="">
+                    <input type="date" class="date">
+                    <label>Durasi (hari):</label>
+                    <input type="number" class="duration" min="1" value="1">
+                </div>
+            </div>
+        </section>
+
+        <form id="form-pelanggan">
+            <h2>Formulir Pelanggan</h2>
+            <label for="name">Nama Pelanggan</label>
+            <input type="text" id="name" name="name" placeholder="Input Nama">
+            <button type="button" id="hitung-btn">Hitung Total</button>
+            <button type="button" id="simpan-btn">Simpan Pemesanan</button>
+        </form>
+
+        <div id="ringkasan"></div>
+        <div id="daftar-pesanan"></div>
+    </main>
+    <script src="script.js"></script>
+</body>
+</html>
